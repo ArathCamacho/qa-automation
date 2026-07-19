@@ -9,7 +9,7 @@
 ### Pasos
 
 1. Clona el repositorio:
-   git clone
+   git clone https://github.com/ArathCamacho/qa-automation.git
    cd saucedemo-tests
 2. Instala las dependencias:
    npm install
