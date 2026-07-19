@@ -11,7 +11,7 @@ test.describe("Carrito", () => {
     await loginPage.login(users.standard.username, users.standard.password);
   });
 
-  test("agregar un producto al carrito", async ({ page }) => {
+  test("agregar un producto al carrito @smoke", async ({ page }) => {
     const inventoryPage = new InventoryPage(page);
 
     await inventoryPage.addProduct("Sauce Labs Bolt T-Shirt");
@@ -19,7 +19,7 @@ test.describe("Carrito", () => {
     await expect(inventoryPage.cartBadge).toHaveText("1");
   });
 
-  test("agregar dos productos, eliminar uno y validar el carrito", async ({
+  test("agregar dos productos, eliminar uno y validar el carrito @regression", async ({
     page,
   }) => {
     const inventoryPage = new InventoryPage(page);

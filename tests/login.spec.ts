@@ -3,7 +3,7 @@ import { LoginPage } from "../pages/Loginpage";
 import { users } from "../fixtures/users";
 
 test.describe("Login", () => {
-  test("login exitoso con credenciales válidas", async ({ page }) => {
+  test("login exitoso con credenciales válidas @smoke", async ({ page }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
@@ -12,7 +12,9 @@ test.describe("Login", () => {
     await expect(page).toHaveURL(/inventory.html/);
   });
 
-  test("login fallido con credenciales incorrectas", async ({ page }) => {
+  test("login fallido con credenciales incorrectas @smoke", async ({
+    page,
+  }) => {
     const loginPage = new LoginPage(page);
 
     await loginPage.goto();
@@ -20,7 +22,7 @@ test.describe("Login", () => {
 
     await expect(loginPage.errorMessage).toBeVisible();
     await expect(loginPage.errorMessage).toContainText(
-      "Usuario y contraseña incorrecta",
+      "Username and password do not match",
     );
   });
 });

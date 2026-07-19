@@ -28,8 +28,9 @@ npx playwright test tests/login.spec.ts
 
 El proyecto está configurado (`playwright.config.ts`) para generar automáticamente:
 
-- Screenshot cuando un test falla (`screenshot: 'only-on-failure'`)
-- Trace (registro paso a paso) en reintentos fallidos (`trace: 'on-first-retry'`)
+- Screenshot cuando un test falla
+- Trace
+- videos
 
 ## Escenarios cubiertos
 
@@ -38,6 +39,8 @@ Inicio de sesión con credenciales incorrectas
 Agregar un producto al carrito
 Completar una compra
 Agregar dos productos, eliminar uno y validar el carrito
+
+- Ejecución multi-navegador: los tests corren automáticamente en Chromium, Firefox y WebKit
 
 ---
 

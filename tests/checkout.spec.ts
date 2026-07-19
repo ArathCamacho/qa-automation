@@ -6,7 +6,7 @@ import { CheckoutPage } from "../pages/CheckoutPage";
 import { users, checkout } from "../fixtures/users";
 
 test.describe("Checkout", () => {
-  test("completar una compra exitosamente", async ({ page }) => {
+  test("completar una compra exitosamente @smoke", async ({ page }) => {
     const loginPage = new LoginPage(page);
     const inventoryPage = new InventoryPage(page);
     const cartPage = new CartPage(page);
@@ -26,6 +26,8 @@ test.describe("Checkout", () => {
     );
     await checkoutPage.finishOrder();
 
-    await expect(checkoutPage.completeHeader).toHaveText("Compra terminada");
+    await expect(checkoutPage.completeHeader).toHaveText(
+      "Thank you for your order!",
+    );
   });
 });
