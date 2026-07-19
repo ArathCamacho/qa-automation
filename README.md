@@ -32,6 +32,20 @@ El proyecto está configurado (`playwright.config.ts`) para generar automáticam
 - Trace
 - videos
 
+## Integración continua (GitHub Actions)
+
+El proyecto incluye un workflow (`.github/workflows/playwright.yml`) que corre automáticamente todos los tests cada vez que se hace push o se abre un pull
+request hacia `main`. El reporte HTML generado se guarda como artifact descargable desde la pestaña "Actions" del repositorio.
+
+## Variables de entorno
+
+Este proyecto usa un archivo `.env` para configurar la URL base de la aplicación.
+
+1. Copia el archivo de ejemplo:
+   cp .env.example .env
+2. El archivo ya viene con el valor correcto por default:
+   BASE_URL=https://www.saucedemo.com
+
 ## Escenarios cubiertos
 
 Inicio de sesión exitoso
@@ -40,7 +54,15 @@ Agregar un producto al carrito
 Completar una compra
 Agregar dos productos, eliminar uno y validar el carrito
 
+## Extra
+
 - Ejecución multi-navegador: los tests corren automáticamente en Chromium, Firefox y WebKit
+
+## Etiquetas de pruebas
+
+Los tests están etiquetados con @smoke y @regression para permitir
+Ejecutar solo smoke tests:
+npx playwright test --grep @smoke
 
 ---
 
