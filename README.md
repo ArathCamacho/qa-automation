@@ -10,7 +10,7 @@
 
 1. Clona el repositorio:
    git clone https://github.com/ArathCamacho/qa-automation.git
-   cd saucedemo-tests
+   cd qa-automation
 2. Instala las dependencias:
    npm install
 3. Instala los navegadores que usa Playwright:
@@ -29,7 +29,6 @@ npx playwright test tests/login.spec.ts
 El proyecto está configurado (`playwright.config.ts`) para generar automáticamente:
 
 - Screenshot cuando un test falla (`screenshot: 'only-on-failure'`)
-- Video cuando un test falla (`video: 'retain-on-failure'`)
 - Trace (registro paso a paso) en reintentos fallidos (`trace: 'on-first-retry'`)
 
 ## Escenarios cubiertos
